@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fetch</title>
+    <style>
+      body {
+        background-color: white;
+        color: black;
+        display: flex;
+      }
+      button {
+        margin-top: 50px;
+        margin-left: 50px;
+        padding: 10px;
+        background-color: black;
+        color: white;
+        border: 2px solid black;
+        border-radius: 10px;
+        height: 50px;
+        width: 150px;
+       
+      }
+      button:hover {
+        background-color: white;
+        color: black;
+      }
+      .button-container {
+        position: relative;
+        left: 150px;
+        display: inline-block;
+      }
+      
+  </style> 
+  </head>
+  <body>
+    <div class="button-container">
+      <button id="btn">Click Here</button>
+    </div>
+    <script>
+      let btn = document.getElementById("btn");
+
+      btn.addEventListener("click", () => {
+        location.assign("./loader.html");
+      });
+    </script>
+  </body>
+</html>
