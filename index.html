@@ -1,72 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fetch</title>
+    <style>
+      body {
+        background-color: white;
+        color: black;
+        display: flex;
+      }
+      button {
+        margin-top: 50px;
+        margin-left: 50px;
+        padding: 10px;
+        background-color: black;
+        color: white;
+        border: 2px solid black;
+        border-radius: 10px;
+        height: 50px;
+        width: 150px;
+       
+      }
+      button:hover {
+        background-color: white;
+        color: black;
+      }
+      .button-container {
+        position: relative;
+        left: 150px;
+        display: inline-block;
+      }
+      
+  </style> 
+  </head>
+  <body>
+    <div class="button-container">
+      <button id="btn">Click Here</button>
+    </div>
     <script>
-        // let data=fetch("https://679af5fe747b09cdccd00c95.mockapi.io/movies")
-        // console.log(data);
-        // data.then((x)=> x.json())
-        // .then((x) => {
-        //     let res=x;
-        //     res.map((x)=>{console.log(x)})
-        // })
-        // .catch((x)=>{console.log(x)}) 
+      let btn = document.getElementById("btn");
 
-      let main_div = document.createElement("div");
-      document.body.append(main_div);
-      main_div.style.display = "flex";
-      main_div.style.flexWrap = "wrap";
-      main_div.style.justifyContent = "center";
-      main_div.style.gap = "5px";
-      let data = fetch("https://679b63c633d316846323adc6.mockapi.io/movies");
-      data
-        .then((x) => x.json())
-        .then((x) => {
-          let res = x;
-
-          res.map((x) => {
-            let poster = document.createElement("img");
-            poster.src = x.poster;
-            poster.style.height = "250px";
-            poster.style.width = "190px";
-
-            let title = document.createElement("h2");
-            title.innerHTML = x.title;
-            title.style.backgroundColor = "black"
-
-            let genre = document.createElement("h3");
-            genre.innerHTML = x.genre;
-            genre.style.backgroundColor = "black";
-
-            let director = document.createElement("h4");
-            director.innerHTML = x.director;
-            director.style.backgroundColor = "black";
-
-            let card = document.createElement("div");
-            card.append(poster, title, genre, director);
-            card.style.border = "2px solid black";
-            card.style.width = "190px";
-            card.style.padding = "10px";
-            card.style.backgroundColor = "black";
-            card.style.color = "lightgrey";
-            card.style.textAlign = "center";
-            card.style.borderRadius = "5px";
-            // card.style.boxShadow = "0 0 8px  rgb(90, 220, 243)";
-            card.style.margin = "5px";
-            main_div.append(card);
-          });
-        })
-        .catch((x) => {
-          console.log(x);
-        });
+      btn.addEventListener("click", () => {
+        location.assign("./loader.html");
+      });
     </script>
   </body>
-</html>
-            
-    </script>
-</body>
 </html>
